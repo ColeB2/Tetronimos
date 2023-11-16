@@ -1,13 +1,12 @@
-import Link from 'next/link'
+// 'use client';
+// import Link from 'next/link'
+import App from '../components/App/App'
+import '../app/globals.css'
 
 const Home = () => {
   return (
     <div>
-      <h1>Home</h1>
-      <p>Hello World! This is the Home page</p>
-      <p>
-        Visit the <Link href="/about">About</Link> page.
-      </p>
+        <App />
     </div>
   )
 }

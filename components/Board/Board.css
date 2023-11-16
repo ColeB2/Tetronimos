@@ -1,0 +1,89 @@
+h1 {
+	font-family: Arial, Helvetica, sans-serif;
+	margin: 0;
+}
+
+h5 {
+	text-align: center;
+	font-family: Arial, Helvetica, sans-serif;
+}
+
+p {
+	font-family: Arial, Helvetica, sans-serif;
+}
+
+body {
+    background-color: #827E81;
+}
+
+
+#canvas {
+    padding-left: 5px;
+    padding-right: 5px;
+    padding-top: 5px;
+}
+
+#linesBox {
+    padding-bottom: 5px;
+}
+
+.line-score {
+    background-color: black;
+    width: 299px;
+    height: 59px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.white {
+    color: white;
+}
+
+.score {
+    width: 250px;
+    height: 120px;
+    background-color: black;
+    padding-bottom: 10px;
+}
+
+.level {
+    width: 175px;
+    height: 90px;
+    background-color: black;
+}
+
+.center-hud {
+    width: auto;
+    align-self:flex-start;
+}
+
+.right-hud {
+    width: 250px;
+    align-self: flex-start;
+}
+
+.left-hud {
+    width: 250px;
+    display: flex;
+    justify-content: flex-end;
+    align-self: flex-end;
+}
+
+
+#nextBox {
+    display: block;
+    padding-top: 5px;
+}
+
+#statBox {
+    display: block;
+}
+
+.canvas-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%
+
+}
