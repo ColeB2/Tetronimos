@@ -6,7 +6,6 @@ import MainGame from "../../src";
 import LinesDisplay from "../LinesDisplay/LinesDisplay";
 import ScoreDisplay from "../ScoreDisplay/ScoreDisplay";
 
-// import './Board.module.css'
 import './Board.css'
 
 
