@@ -2,7 +2,6 @@
 import { useState } from "react";
 import NavbarLink from "../NavbarLink/NavbarLink";
 import Link from "next/link";
-import Image from "next/image";
 
 const Navbar = () => {
     const [isNavOpen, setIsNavOpen] = useState<boolean>(false);
@@ -21,6 +20,7 @@ const Navbar = () => {
                 <div className="flex items-center">
                     <nav className="md:flex hidden">
                         <NavbarLink href="/" text="Home" />
+                        <NavbarLink href="/scores" text="Scores" />
                         <NavbarLink href="/about" text="About" />
                         {/* <NavbarLink href="/contact" text="Contact" /> */}
                     </nav>
@@ -46,6 +46,7 @@ const Navbar = () => {
         {isNavOpen && (
             <nav className="md:hidden py-2">
                 <NavbarLink href="/" text="Home" />
+                <NavbarLink href="/scores" text="Scores" />
                 <NavbarLink href="/about" text="About" />
                 {/* <NavbarLink href="/contact" text="Contact" /> */}
             </nav>
