@@ -173,8 +173,9 @@ const BoardComponent = ({
 
     return (
         <div>
-            
+           
             <div className="canvas-container">
+            
                 <div className="left-hud">
                     <canvas
                         id="statBox"
@@ -224,8 +225,6 @@ const BoardComponent = ({
                     }
                 </div>
             </div>
-            
-            
         </div>
     )
 }

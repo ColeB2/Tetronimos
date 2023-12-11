@@ -1,15 +1,20 @@
-import React, { useState, useEffect } from "react";
+import React, { useState } from "react";
 import BoardComponent from "../Board/Board";
 import StartScreen from "../Start/Start";
 import EndScreen from "../End/End";
+import NameGenerator from "../NameSelect/NameSelect";
 import ControlsDisplay from "../Controls/Controls";
+import { adjectives, nouns } from "./utils";
+
+
 
 
 const Tetronimos = () => {
-    const [gameState, setGameState] = useState<string>('start');
+    const [gameState, setGameState] = useState<string>('name');
     const [selectedLevel, setSelectedLevel] = useState<number>(0);
     const [score, setScore] = useState<number>(0);
     const [highScore, setHighScore] = useState<number>(0);
+    const [username, setUsername] = useState<string>('')
 
     const handleStartGame = () => {
         setGameState('gameplay')
@@ -30,6 +35,11 @@ const Tetronimos = () => {
     const handleGameOver = () => {
         setGameState('end');
     };
+
+    const handleUsernameChange = (newName: string) => {
+        setUsername(newName);
+        setGameState('start')
+    }
     
     const restartGame = () => {
         setScore(0);
@@ -39,11 +49,21 @@ const Tetronimos = () => {
     
     return (
         <div>
+            {gameState === 'name' && 
+                <div>
+                    <NameGenerator
+                        nouns={nouns}
+                        adjectives={adjectives}
+                        handleNameSelect={handleUsernameChange}
+                    />
+                </div>
+            }
             {gameState === 'start' &&
                 <div className="mt-10">
                     <StartScreen
                         handleStartGame={handleStartGame}
                         handleLevelSelect={handleLevelSelect}
+                        username={username}
                     />
                     <ControlsDisplay />
                 </div>
@@ -61,6 +81,7 @@ const Tetronimos = () => {
             {gameState === 'end' &&
                 <EndScreen 
                     handleRestartGame={restartGame}
+                    username={username}
                     score={score}
                 />}
         </div>

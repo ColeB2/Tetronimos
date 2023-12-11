@@ -2,23 +2,22 @@
 import axios from 'axios';
 import { useEffect, useState } from 'react'
 import { Scores, ScoresResponse } from './types';
-
-const scoresApi = axios.create({
-    baseURL: 'https://tetronimos-db.cebcole.workers.dev'
-})
+import scoresApi from './api';
 
 
 export default function Scores() {
     const [scores, setScores] = useState<Scores[]|null>(null);
 
     useEffect(() => {
-        // console.log('here')
         const fetchData = async () => {
             try {
                 await scoresApi
                     .get('/api/scores/all')
                     .then((res: ScoresResponse) => {
-                        setScores(res.data as Scores[]);
+                        const orderedScores = res.data.sort((a, b ) => {
+                            return b.Score - a.Score
+                        })
+                        setScores(orderedScores as Scores[]);
                     })
             } catch (error) {
               console.error('Error fetching data:', error);
@@ -29,9 +28,12 @@ export default function Scores() {
 
     return (
         <>
-            <h1 className="mb-12 text-4xl font-bold text-center text-black-700">
+            <h1 className="mb-4 text-4xl font-bold text-center text-black-700">
                 High Scores
             </h1>
+            <h3 className="mb-4 text-2xl text-center text-black-700">
+                High Scores may take time to update.
+            </h3>
             
 
             <div className="flex justify-center">

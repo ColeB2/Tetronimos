@@ -3,9 +3,10 @@ import React from 'react';
 interface StartScreenProps {
     handleStartGame: () => void;
     handleLevelSelect: (level: number) => void;
+    username: string;
 }
 
-const StartScreen = ({handleStartGame, handleLevelSelect}: StartScreenProps) => {
+const StartScreen = ({handleStartGame, handleLevelSelect, username}: StartScreenProps) => {
 
     const handleLevelChange = (event: React.ChangeEvent<HTMLSelectElement>) => {
         handleLevelSelect(parseInt(event.target.value));
@@ -16,6 +17,9 @@ const StartScreen = ({handleStartGame, handleLevelSelect}: StartScreenProps) => 
     return (
         <div className='flex flex-col items-center justify-center'>
             <div className='z-2'>
+                <h1 className='black font-bold text-3xl mb-4'>
+                    Hello {username}
+                </h1>
                 <h1 className='black font-bold text-3xl mb-4'>
                     Select A Level
                 </h1>
