@@ -2,8 +2,7 @@ import { Board } from '../utils/board';
 import { Piece } from '../utils/piece';
 import { tetronimoPieces } from '../utils/tetronimo';
 import type { PieceObject, PieceStats } from '../utils/types';
-import { SPEED, LEVELS } from '../constants/constants';
-
+import { SPEED, LEVELS, SCORE_MULT } from '../constants/constants';
 
 class MainGame {
     public cellWidth: number;
@@ -293,23 +292,8 @@ class MainGame {
         }
     }
     
-      handleLineScore(numberOfLinesToClear: number) {
-        let multiplier = 40;
-        switch (numberOfLinesToClear) {
-          case 1:
-            multiplier = 40;
-            break;
-          case 2:
-            multiplier = 100;
-            break;
-          case 3:
-            multiplier = 300;
-            break;
-          case 4:
-            multiplier = 1200;
-            break;
-        }
-        this.score += multiplier * (this.level + 1);
+      handleLineScore(numLines: number) {
+        this.score += SCORE_MULT[numLines] * (this.level + 1);
       }
 
     gameOverCheck() {

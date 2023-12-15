@@ -64,3 +64,10 @@ export const LEVELS = [
 ]; //25-28
 
 export const BLOCK_WIDTH: number = 30;
+
+export const SCORE_MULT: {[key:number]: number} = {
+    1: 40,
+    2: 100,
+    3: 300,
+    4: 1200
+}
