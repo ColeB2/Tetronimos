@@ -297,16 +297,16 @@ class MainGame {
         let multiplier = 40;
         switch (numberOfLinesToClear) {
           case 1:
-            multiplier = 40 * (this.level + 1);
+            multiplier = 40;
             break;
           case 2:
-            multiplier = 100 * (this.level + 1);
+            multiplier = 100;
             break;
           case 3:
-            multiplier = 300 * (this.level + 1);
+            multiplier = 300;
             break;
           case 4:
-            multiplier = 1200 * (this.level + 1);
+            multiplier = 1200;
             break;
         }
         this.score += multiplier * (this.level + 1);
