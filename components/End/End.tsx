@@ -23,8 +23,7 @@ const EndScreen = ({
             name: username,
         }
         try {
-            const response = await submitApi.post('/', requestBody)
-            
+            const response = await submitApi.post('/api/scores', requestBody)
             if (response.status == 200) {
                 console.log('submitted successfully', response.data)
             } else {

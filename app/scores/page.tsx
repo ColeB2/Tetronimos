@@ -1,5 +1,4 @@
 'use client';
-import axios from 'axios';
 import { useEffect, useState } from 'react'
 import { Scores, ScoresResponse } from './types';
 import scoresApi from './api';
