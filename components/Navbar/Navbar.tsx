@@ -46,8 +46,8 @@ const Navbar = () => {
         {isNavOpen && (
             <nav className="md:hidden py-2">
                 <NavbarLink href="/" text="Home" />
-                <NavbarLink href="/scores" text="Scores" />
-                <NavbarLink href="/about" text="About" />
+                {/* <NavbarLink href="/scores" text="Scores" /> */}
+                {/* <NavbarLink href="/about" text="About" /> */}
                 {/* <NavbarLink href="/contact" text="Contact" /> */}
             </nav>
         )}

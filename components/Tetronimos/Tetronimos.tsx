@@ -10,7 +10,7 @@ import { adjectives, nouns } from "./utils";
 
 
 const Tetronimos = () => {
-    const [gameState, setGameState] = useState<string>('name');
+    const [gameState, setGameState] = useState<string>('start');
     const [selectedLevel, setSelectedLevel] = useState<number>(0);
     const [score, setScore] = useState<number>(0);
     const [highScore, setHighScore] = useState<number>(0);
@@ -49,7 +49,7 @@ const Tetronimos = () => {
     
     return (
         <div>
-            {gameState === 'name' && 
+            {/* {gameState === 'name' && 
                 <div>
                     <NameGenerator
                         nouns={nouns}
@@ -57,7 +57,7 @@ const Tetronimos = () => {
                         handleNameSelect={handleUsernameChange}
                     />
                 </div>
-            }
+            } */}
             {gameState === 'start' &&
                 <div className="mt-10">
                     <StartScreen

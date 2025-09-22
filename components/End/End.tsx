@@ -1,5 +1,5 @@
 import React, { useState } from 'react'
-import submitApi from './api'
+// import submitApi from './api'
 
 interface EndScreenProps {
     handleRestartGame: () => void;
@@ -13,29 +13,29 @@ const EndScreen = ({
     score
     }: EndScreenProps) => {
         
-    const [isScoreSubmitted, setIsScoreSubmitted] = useState(false);
-    const handleSubmitScore = async() => {
-        if (isScoreSubmitted) {
-            return
-        }
-        const requestBody = {
-            score: score,
-            name: username,
-        }
-        try {
-            const response = await submitApi.post('/api/scores', requestBody)
-            if (response.status == 200) {
-                console.log('submitted successfully', response.data)
-            } else {
-                console.log('error', response.status, response.statusText)
-            }
-            setIsScoreSubmitted(true);
-        } catch (error: any) {
-            // Handle network or request errors
-            console.error('Error:', error.message);
-        }
+    // const [isScoreSubmitted, setIsScoreSubmitted] = useState(false);
+    // const handleSubmitScore = async() => {
+    //     if (isScoreSubmitted) {
+    //         return
+    //     }
+    //     const requestBody = {
+    //         score: score,
+    //         name: username,
+    //     }
+    //     try {
+    //         const response = await submitApi.post('/api/scores', requestBody)
+    //         if (response.status == 200) {
+    //             console.log('submitted successfully', response.data)
+    //         } else {
+    //             console.log('error', response.status, response.statusText)
+    //         }
+    //         setIsScoreSubmitted(true);
+    //     } catch (error: any) {
+    //         // Handle network or request errors
+    //         console.error('Error:', error.message);
+    //     }
     
-    }
+    // }
 
     return (
         <div className='flex flex-col items-center justify-center'>
@@ -44,7 +44,7 @@ const EndScreen = ({
                     {score}
                 </h1>
             </div>
-            <button 
+            {/* <button 
                 onClick={handleSubmitScore}
                 className="
                     bg-blue-500
@@ -60,7 +60,7 @@ const EndScreen = ({
                     active:bg-blue-800"
             >
                 Submit
-            </button>
+            </button> */}
             <button 
                 onClick={handleRestartGame}
                 className="
